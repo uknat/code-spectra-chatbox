@@ -1,6 +1,5 @@
 import pandas as pd
 
-# Example function to load data
 def load_data(file_path):
     """
     Load conversational data from the specified file path.
@@ -9,7 +8,6 @@ def load_data(file_path):
     data = pd.read_csv(file_path)
     return data
 
-# Example function to generate a report
 def generate_data_report(data):
     """
     Generate a report detailing the volume and initial observations of the collected data.
