@@ -1,4 +1,3 @@
-# Preprocessing steps might include tokenization, removing stop words, stemming, and vectorization.
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
@@ -15,10 +14,8 @@ def preprocess_data(data):
     stop_words = set(stopwords.words('english'))
     stemmer = PorterStemmer()
 
-    # Simple preprocessing
     data['processed'] = data['text'].apply(lambda x: ' '.join([stemmer.stem(word) for word in word_tokenize(x.lower()) if word not in stop_words and word.isalpha()]))
-    
-    # Vectorization
+   
     vectorizer = TfidfVectorizer()
     vectors = vectorizer.fit_transform(data['processed'])
     
